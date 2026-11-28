@@ -1,1 +1,39 @@
-.
+name: Project CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Check JavaScript syntax
+        run: |
+          if [ -d js ]; then
+            find js -name "*.js" -print0 |
+              xargs -0 -r -n1 node --check
+          else
+            echo "JavaScript modules not added yet"
+          fi
+
+      - name: Run automated tests
+        run: |
+          if [ -d tests ]; then
+            npm test
+          else
+            echo "Tests not added yet"
+          fi
+          
