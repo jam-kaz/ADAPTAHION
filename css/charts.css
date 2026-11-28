@@ -1,0 +1,238 @@
+/* Контейнер столбчатой диаграммы */
+.chart-box {
+    padding: 8px 0 4px;
+}
+
+.chart-legend {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+    font-size: 13px;
+    color: var(--mu);
+    margin-bottom: 18px;
+}
+
+.chart-legend span {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.chart-legend .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+    display: inline-block;
+}
+
+.chart-legend .dot.primary {
+    background: var(--teal);
+}
+
+.chart-legend .dot.secondary {
+    background: var(--navy);
+}
+
+.chart-grid-area {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+    gap: 14px;
+    align-items: end;
+    padding-top: 20px;
+    border-bottom: 1px solid var(--ln);
+}
+
+.chart-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.chart-bars-pair {
+    display: flex;
+    align-items: flex-end;
+    gap: 8px;
+    height: 170px;
+    width: 100%;
+    justify-content: center;
+    padding: 0 6px;
+}
+
+.chart-bar-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%;
+    width: 28px;
+}
+
+.chart-val {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 4px;
+}
+
+.chart-bar {
+    width: 100%;
+    border-radius: 6px 6px 0 0;
+    transition: height 0.35s ease;
+}
+
+.chart-bar.primary {
+    background: linear-gradient(180deg, var(--mint), var(--teal));
+}
+
+.chart-bar.secondary {
+    background: var(--navy);
+}
+
+.chart-label {
+    text-align: center;
+    padding: 10px 4px 6px;
+    font-size: 13px;
+}
+
+.chart-label b {
+    display: block;
+    color: var(--ink);
+}
+
+.chart-label small {
+    color: var(--mu);
+    font-size: 11px;
+}
+
+/* Горизонтальная матрица сравнения по 3 тестам */
+.hchart-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.hchart-row {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 14px;
+    align-items: center;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--ln);
+}
+
+.hchart-row:last-child {
+    border-bottom: 0;
+    padding-bottom: 0;
+}
+
+.hchart-group b {
+    display: block;
+    font-size: 14px;
+}
+
+.hchart-group small {
+    color: var(--mu);
+    font-size: 12px;
+}
+
+.hchart-tracks {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.hchart-line {
+    display: grid;
+    grid-template-columns: 78px 1fr 38px;
+    gap: 8px;
+    align-items: center;
+    font-size: 12px;
+}
+
+.hchart-line span {
+    color: var(--mu);
+}
+
+.hchart-line b {
+    text-align: right;
+    font-size: 12px;
+}
+
+.hchart-track {
+    height: 8px;
+    background: var(--bg);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.hchart-track i {
+    display: block;
+    height: 100%;
+    border-radius: 8px;
+    transition: width 0.35s ease;
+}
+
+.hchart-track i.c-navy {
+    background: var(--navy);
+}
+
+.hchart-track i.c-teal {
+    background: var(--teal);
+}
+
+.hchart-track i.c-mint {
+    background: var(--mint);
+}
+
+/* Кольцевая SVG-диаграмма */
+.donut-layout {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.donut-svg {
+    width: 150px;
+    height: 150px;
+    flex: none;
+}
+
+.donut-stats {
+    flex: 1;
+    min-width: 210px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.d-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+}
+
+.d-item i {
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+    flex: none;
+}
+
+.d-item span {
+    flex: 1;
+    color: var(--ink);
+}
+
+.d-item b {
+    color: var(--ink);
+}
+
+/* Адаптив для мобильных устройств */
+@media (max-width: 640px) {
+    .hchart-row {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+}

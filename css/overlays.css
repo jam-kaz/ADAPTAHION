@@ -1,0 +1,183 @@
+/* Всплывающее уведомление (Toast) */
+#toast {
+    position: fixed;
+    left: 50%;
+    top: 80px;
+    transform: translateX(-50%);
+    background: var(--dk);
+    color: #fff;
+    padding: 10px 18px;
+    border-radius: 10px;
+    display: none;
+    z-index: 9;
+    max-width: 90%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Модальное окно */
+#mod {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.53);
+    display: none;
+    place-items: center;
+    z-index: 8;
+}
+
+#mod > div {
+    max-width: 520px;
+    width: 92%;
+}
+
+/* Блок схемы архитектуры и узлов (из макета) */
+.arch {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 18px;
+}
+
+.lay {
+    margin-bottom: 14px;
+}
+
+.lay > small {
+    display: block;
+    color: var(--mu);
+    margin-bottom: 6px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 0.05em;
+}
+
+.nodes {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.n {
+    border: 1.5px solid var(--teal);
+    background: var(--sf);
+    color: var(--ink);
+    border-radius: 10px;
+    padding: 9px 12px;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.n.d {
+    border-color: var(--navy);
+    background: #edf0f8;
+    color: var(--navy);
+}
+
+.n.e {
+    border-style: dashed;
+    border-color: var(--mu);
+    color: var(--mu);
+    font-weight: 500;
+}
+
+.n.sel {
+    background: var(--teal);
+    color: #fff;
+    border-color: var(--teal);
+}
+
+.n.rel {
+    box-shadow: 0 0 0 3px var(--mint);
+}
+
+#det {
+    position: sticky;
+    top: 90px;
+    align-self: start;
+}
+
+#det li {
+    margin-bottom: 4px;
+}
+
+/* Панель логов (из макета) */
+#log {
+    position: fixed;
+    right: 14px;
+    bottom: 14px;
+    width: 290px;
+    background: #0f1f2e;
+    color: #9fe;
+    border-radius: 12px;
+    font: 11px/1.5 ui-monospace, Menlo, monospace;
+    padding: 10px 12px;
+    opacity: 0.95;
+    z-index: 6;
+}
+
+#log b {
+    color: #fff;
+}
+
+#log div {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Переключатель ролей при входе (если используется) */
+.rp {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+
+.rp button {
+    border: 1.5px solid var(--ln);
+    background: var(--sf);
+    color: var(--ink);
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+.rp .on {
+    border-color: var(--teal);
+    background: #e6f6f8;
+    color: var(--teal);
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 800px) {
+    .wrap {
+        flex-direction: column;
+    }
+
+    nav {
+        width: auto;
+        display: flex;
+        overflow-x: auto;
+        border-right: 0;
+        border-bottom: 1px solid var(--ln);
+    }
+
+    nav .who {
+        display: none;
+    }
+
+    nav button {
+        white-space: nowrap;
+        width: auto;
+    }
+
+    .arch {
+        grid-template-columns: 1fr;
+    }
+
+    main {
+        padding: 16px;
+    }
+
+    #log {
+        display: none;
+    }
+}
