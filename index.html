@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Финуниверситет — Сервис адаптации студентов</title>
+    
+    <!-- Фирменные шрифты по брендбуку (стр. 15) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Стили приложения -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/charts.css">
+    <link rel="stylesheet" href="css/overlays.css">
+</head>
+<body>
+
+    <!-- Шапка сайта (Хедер) -->
+    <header>
+        <img src="assets/images/logo-header.png" alt="Финансовый университет при Правительстве Российской Федерации">
+        <div>
+            <b>Сервис адаптации студентов</b>
+        </div>
+        <div class="sp"></div>
+        <div id="usr" class="row" style="display: none;">
+            <span id="un"></span>
+            <button class="b2" id="logout-btn">Выйти</button>
+        </div>
+    </header>
+
+    <!-- Экран входа в сервис -->
+    <div class="lg" id="lg">
+        <div class="c login-card">
+            <h1>Вход в сервис</h1>
+            <p class="sub">Введите логин и пароль. Личный кабинет и права доступа определятся автоматически</p>
+            
+            <label for="lgn" class="field-label">Логин</label>
+            <input id="lgn" type="text" placeholder="логин (например, 101, 201 или 333)" autocomplete="off">
+            
+            <label for="lpw" class="field-label" style="margin-top: 12px;">Пароль</label>
+            <input id="lpw" type="password" placeholder="пароль">
+            
+            <div class="note r" id="er" style="display: none;"></div>
+            
+            <div class="login-action">
+                <button class="b" id="login-btn">Войти</button>
+            </div>
+            
+            <div class="login-hint" id="hint">
+                <b>Демо-доступ:</b><br>
+                • Студенты (25 чел.): 101–105 (ПИ25-1), 106–110 (ПИ26-1), 111–115 (ПМ24-1), 116–120 (ИБ25-1), 121–125 (ИБ26-1) · пароль: <b>ааа</b> (aaa)<br>
+                • Куратор 1 (ПИ25-1, ПИ26-1): <b>201</b> · Куратор 2 (ПМ24-1): <b>202</b> · Куратор 3 (ИБ25-1, ИБ26-1): <b>203</b> · пароль: <b>ббб</b><br>
+                • Деканат (все 5 групп и графики): <b>333</b> / <b>ввв</b> (ddd)<br>
+                • Администратор: <b>444</b> / <b>ггг</b> (uuu)
+            </div>
+        </div>
+    </div>
+
+    <!-- Рабочая область после входа (скрыта до авторизации) -->
+    <div class="wrap" style="display: none;">
+        <nav id="nv"></nav>
+        <main id="mn"></main>
+    </div>
+
+    <!-- Подвал сайта (Футер) -->
+    <footer>
+        <img src="assets/images/logo-footer.png" alt="Финансовый университет">
+        <div>
+            Финансовый университет при Правительстве РФ · edu.fa.ru
+            <br>
+            Данные обрабатываются по ФЗ-152 с согласия студента · демонстрационные данные
+        </div>
+    </footer>
+
+    <!-- Уведомления и модальные окна -->
+    <div id="toast"></div>
+    <div id="mod">
+        <div class="c" id="mb"></div>
+    </div>
+
+    <!-- Точка входа JavaScript -->
+    <script type="module" src="js/app.js"></script>
+</body>
+</html>
