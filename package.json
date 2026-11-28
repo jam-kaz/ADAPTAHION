@@ -1,0 +1,10 @@
+{
+  "name": "student-adaptation-service",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Сервис анализа адаптации студентов",
+  "scripts": {
+    "test": "node --test"
+  }
+}
